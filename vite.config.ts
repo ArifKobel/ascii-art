@@ -15,7 +15,12 @@ const config = defineConfig({
     options: { typeAware: true, typeCheck: true },
   },
   resolve: { tsconfigPaths: true },
-  plugins: lazyPlugins(() => [devtools(), tailwindcss(), tanstackStart(), viteReact()]),
+  plugins: lazyPlugins(() => [
+    devtools(),
+    tailwindcss(),
+    tanstackStart({ prerender: { enabled: true } }),
+    viteReact(),
+  ]),
 });
 
 export default config;
