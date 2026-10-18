@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-panel: #111112;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #0c0c0d;
+  color: #ededed;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(255 255 255 / 0.12) transparent;
+  }
+
+  button:not(:disabled),
+  [role="button"],
+  select,
+  summary {
+    cursor: pointer;
+  }
+}
+
+.dialkit-root[data-mode="inline"] {
+  --dial-glass-bg: var(--color-panel);
+  --dial-dropdown-bg: #1c1c1e;
+  font-family: var(--font-sans);
+}
